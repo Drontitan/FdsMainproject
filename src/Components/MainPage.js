@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./MainPage.css"
-import { Link } from 'react-router-dom'
-import { Navigate } from 'react-router-dom';
-export const MainPage = ({ Login }) => {
+import { Link, useNavigate } from 'react-router-dom'
+import firebase from 'firebase'
+import { logout } from '../Auth'
+import { Avatar } from '@mui/material'
+export const MainPage = () => {
+    const navigate = useNavigate();
+    const [userdata, setuserData] = useState([])
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged(async (user) => {
+            if (!user)
+                navigate('/login')
+            else {
+                setuserData(user)
+                console.log(user.photoURL)
+            }
+        });
+    }, [])
     return (
         <div>
-            {
-                Login ? <><Link to="/login"><button>hello i am btn</button></Link></> : <Navigate replace to="/login"></Navigate>
-            }
+            <Avatar src={userdata.photoURL}></Avatar>
+            <><button onClick={() => logout()}>LOGOUT</button></>
         </div>
     )
 }

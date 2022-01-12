@@ -1,21 +1,24 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route, useNavigate
 } from "react-router-dom";
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import { Calender } from "./Components/Calender";
 import { Login } from "./Components/Login";
 import { MainPage } from "./Components/MainPage";
+import firebase from "firebase";
 
 function App() {
   const [login, setlogin] = useState(false)
+  
+
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<MainPage Login={login} />} >
+        <Route exact path="/" element={<MainPage />} >
         </Route>
-        <Route exact path="/login" element={<Login />}>
+        <Route exact path="/login" element={<Login AuthLogin={login} AuthsetLogin={setlogin} />}>
         </Route>
         <Route exact path="/calender" element={<Calender />}>
         </Route>

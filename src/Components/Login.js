@@ -25,49 +25,10 @@ export const Login = ({ AuthLogin, AuthsetLogin }) => {
                 <h1>Welcome User</h1>
                 <div class="form">
                     {
-                        login ? <>
-                            <div class="signup">
-                                <div class="form-group">
-                                    <input type="text" placeholder="full name" required="" />
-                                </div>
-                                <div class="form-group">
-                                    <input onChange={(e) => setemail(e.target.value)} type="email" placeholder="Email" required="" />
-                                </div>
-                                <div class="form-group">
-                                    <input onChange={(e) => setpass(e.target.value)} type="password" placeholder="password" required="" />
-                                </div>
-                                <button onClick={() => console.log(signup(email, pass))} type="submit" class="btn">SIGN UP</button>
-                                <div >
-                                    Already have an account? <div className="togglelogin" id="login" onClick={() => setlogin(false)} >Login</div>
-                                </div>
-                            </div>
-                        </>
-                            :
-                            <>
-                                <div class="signin">
-                                    <div class="form-group">
-                                        <input onChange={(e) => setemailL(e.target.value)} type="email" placeholder="Email" required="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input onChange={(e) => setpassL(e.target.value)} type="password" placeholder="password" required="" />
-                                    </div>
-                                    {/* <div class="form-group">
-                                        <input type="password" placeholder="Confirm password" required="" />
-                                    </div> */}
-                                    {/* <div class="" forget-password>
-                                        <div class="check-box">
-                                            <input type="checkbox" id="checkbox" />
-                                            <label for="checkbox">Remember me</label>
-                                        </div>
-                                        Forget Password?
-                                    </div> */}
-                                    <button onClick={() => console.log(_login(emailL, passL))} type="submit" class="btn">LOGIN</button>
-                                    <button onClick={() => login_google().then(() => { AuthsetLogin(true); navigate('/'); })} class="btn">Google</button>
-                                    <div>
-                                        Create New a account? <div className="togglelogin" id="signup" onClick={() => setlogin(true)} >Signup</div>
-                                    </div>
-                                </div>
-                            </>
+                               
+            <button onClick={() => login_google().then(() => { AuthsetLogin(true); navigate('/'); })} class="btn">Google</button>
+                                   
+                           
                     }
                 </div >
             </div >

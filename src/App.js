@@ -1,17 +1,17 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route, useNavigate
+  Route
 } from "react-router-dom";
 import { useState, useLayoutEffect } from "react";
 import { Calender } from "./Components/Calender";
 import { Login } from "./Components/Login";
 import { MainPage } from "./Components/MainPage";
-import firebase from "firebase";
+import "./App.css";
 
 function App() {
   const [login, setlogin] = useState(false)
-  
+
 
   return (
     <Router>

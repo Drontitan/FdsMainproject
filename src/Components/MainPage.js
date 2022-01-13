@@ -20,9 +20,8 @@ export const MainPage = () => {
     }, [])
     return (
         <div>
-            <Avatar src={userdata.photoURL}></Avatar>
+            <Avatar   src={userdata.photoURL}></Avatar>
             <h4>{userdata.displayName}</h4>
-            <><button ></button></>
             <button class="button-64" role="button"  ><span onClick={() => logout()} class="text">LOGOUT</span></button>
         </div>
     )

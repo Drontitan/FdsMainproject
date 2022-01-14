@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-
-
-
 .bg-image > img {
   position: absolute;
   z-index: -1;
@@ -11,21 +8,23 @@
   height: 100vh;
   width: 100vw;
 }
-body{
-  display: flex;
-  justify-content: center;
-  align-content: center;
 
-}
-.button-64 {
-  margin-top: 160%;
+.centered {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
   align-items: center;
-  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+}
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   display: flex;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;

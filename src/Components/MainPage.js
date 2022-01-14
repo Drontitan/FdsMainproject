@@ -14,15 +14,34 @@ export const MainPage = () => {
                 navigate('/login')
             else {
                 setuserData(user)
-                // console.log(user.photoURL)
+                console.log(user)
             }
         });
     }, [])
+
+
     return (
-        <div>
-            <Avatar   src={userdata.photoURL}></Avatar>
-            <h4>{userdata.displayName}</h4>
-            <button class="button-64" role="button"  ><span onClick={() => logout()} class="text">LOGOUT</span></button>
-        </div>
+        <>
+            <div className="navbar">
+                <div className="components">
+                    <Link to="/"><span>Home</span></Link>
+                    <Link to="/calender"><span>Calender</span></Link>
+                    <Link to="/schedule"><span>Schedule</span></Link>
+                </div>
+                <div class="user">
+                    <div className="button-nav">
+                        <button onClick={() => logout()} class="text">LOGOUT</button >
+                    </div>
+                    {/* <p class="post"> {userdata.email} </p> */}
+                    <div className='avatar-nav'>
+                        <Avatar src={userdata.photoURL} size={40} sx={{ width: 56, height: 56 }} ></Avatar>
+                    </div>
+                    <h3 class="name" > {userdata.displayName}</h3>
+                </div>
+            </div>
+            IDK NEXT
+        </>
+
+
     )
 }

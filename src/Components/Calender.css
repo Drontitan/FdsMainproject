@@ -1,0 +1,8 @@
+.calender {
+  padding: 3rem 15rem;
+}
+
+.calender > h1 {
+  text-align: center;
+  padding: 10px;
+}

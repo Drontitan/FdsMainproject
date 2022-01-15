@@ -67,7 +67,7 @@ export const Create = ({ UserData }) => {
                         </div>
                         <div>
                             <span>All day</span>
-                            <input type="checkbox" />
+                            <input onChange={(event) => setallday(event.target.value)} type ="checkbox" />
                         </div>
                     </div>
                     <div>

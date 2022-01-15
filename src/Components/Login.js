@@ -3,7 +3,7 @@ import BG from '../Images/BG.jpg'
 import "./Login.css"
 import { login_google } from '../Auth';
 import { useNavigate } from 'react-router-dom';
-export const Login = ({ AuthLogin, AuthsetLogin }) => {
+export const Login = ({ AuthsetLogin }) => {
 
     const navigate = useNavigate();
 

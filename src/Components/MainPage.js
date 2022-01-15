@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import firebase from 'firebase'
 import { logout } from '../Auth'
 import { Avatar } from '@mui/material'
-export const MainPage = () => {
+export const MainPage = ({ setUserData}) => {
     const navigate = useNavigate();
     const [userdata, setuserData] = useState([])
     useEffect(() => {
@@ -14,7 +14,7 @@ export const MainPage = () => {
                 navigate('/login')
             else {
                 setuserData(user)
-                console.log(user)
+                setUserData(user)
             }
         });
     }, [])
@@ -26,7 +26,6 @@ export const MainPage = () => {
                 <div className="components">
                     <Link to="/"><span>Home</span></Link>
                     <Link to="/calender"><span>Calender</span></Link>
-                    <Link to="/schedule"><span>Schedule</span></Link>
                 </div>
                 <div class="user">
                     <div className="button-nav">
@@ -39,9 +38,10 @@ export const MainPage = () => {
                     <h3 class="name" > {userdata.displayName}</h3>
                 </div>
             </div>
-            IDK NEXT
+            <div class="container">
+                <Link to="/create"> <span>Create a Schedule</span></Link>
+                <Link to="/join"> <span>Join a Schedule</span></Link>
+            </div>
         </>
-
-
     )
 }

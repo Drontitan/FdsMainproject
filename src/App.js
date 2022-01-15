@@ -14,7 +14,6 @@ import "./App.css";
 function App() {
   const [login, setlogin] = useState(false)
   const [UserData, setUserData] = useState([])
-
   return (
     <Router>
       <Routes>
@@ -24,7 +23,7 @@ function App() {
         </Route>
         <Route exact path="/calender" element={<Calender UserData={UserData}/>}>
         </Route>
-        <Route exact path="/create" element={<Create />}>
+        <Route exact path="/create" element={<Create UserData={UserData}/>}>
         </Route>
         <Route exact path="/join" element={<Join />}>
         </Route>

@@ -29,14 +29,7 @@ var events = [
 ];
 export const Calender = ({ UserData }) => {
 
-    const sendData = () => {
-        db.collection("schedule").doc(UserData.email).collection("details").add(
-            {
-                name: "Buyout",
-                date: Date.now(), // on which is it set
-                allDay: true,
-            });
-    }
+    
 
     return (
         <>
@@ -46,7 +39,7 @@ export const Calender = ({ UserData }) => {
                     <Link to="/calender"><span>Calender</span></Link>
                 </div>
             </div>
-            {/* <button onClick={sendData}>SEND A TEST DATA</button> */}
+            
             <div className='calender'>
                 <h1>MY CALENDER</h1>
                 <RevoCalendar events={events} timeFormat24={false} allowDeleteEvent={true}
